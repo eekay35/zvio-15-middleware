@@ -1,0 +1,11 @@
+<%
+	buildtime = middleware.call_sync('system.info')['buildtime']
+	motd = middleware.call_sync('system.advanced.config')['motd']
+%>\
+
+	zVault.io
+	Build on code from FreeBSD and FreeNAS/TrueNAS (iXsystems)
+	All rights reserved to code authors.
+% if motd:
+${motd}
+% endif
